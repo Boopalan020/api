@@ -2,7 +2,6 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth2');
 const key = require('./keys');
 const User = require('../model/User.Model');
-const { deserializeUser } = require('passport');
 
 // Serializing the User (to the browser Cookies)
 passport.serializeUser((user, done) => {

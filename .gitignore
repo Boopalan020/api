@@ -1,2 +1,4 @@
 /node_modules
 /config.keys
+/client/node_modules
+client/src/logo.svg

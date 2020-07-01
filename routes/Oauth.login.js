@@ -19,11 +19,9 @@ Authrouter.get('/login',isAuths, passport.authenticate('google', {
 }));
 
 Authrouter.get('/redirected', passport.authenticate('google'), (req, res) => {
-    // After successfull signup or sign in
-    //  Users getting resirected
-    // res.status(200).send('you are logged in' + req.user);
 
-    res.redirect('/dashboard/');
+    // res.redirect('/profile?token=' + req.GoogleID);
+    res.redirect("http://localhost:3000/profile?token="+req.user.GoogleID);
 });
 
 module.exports = Authrouter;
