@@ -1,7 +1,7 @@
 import React from "react";
-import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Home as HomeComponent, LoginComponent} from './component/HomeComponents/homeComponent';
+import { Home as HomeComponent } from './component/HomeComponents/homeComponent';
+import { LoginComponent } from './component/HomeComponents/LoginComponent';
 import { BoardComponent } from './component/DashBoardComponents/boardComponent'
 
 function App(props){

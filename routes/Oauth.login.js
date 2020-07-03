@@ -20,7 +20,6 @@ Authrouter.get('/login',isAuths, passport.authenticate('google', {
 
 Authrouter.get('/redirected', passport.authenticate('google'), (req, res) => {
 
-    // res.redirect('/profile?token=' + req.GoogleID);
     res.redirect("http://localhost:3000/profile?token="+req.user.GoogleID);
 });
 

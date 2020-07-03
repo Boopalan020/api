@@ -6,11 +6,9 @@ authRoute.use(express.json());
 
 authRoute.post('/', (req, res) => {
     
-    // // res.status(200).send(req.user);
-    // res.status(200).send({user : req.user});
     User.findOne({GoogleID : req.body.token})
     .then(matchedUser => {
-        console.log('Id mathced' + matchedUser);
+        // console.log('Id mathced' + matchedUser);
         res.status(200).send(matchedUser);
     })
 });
