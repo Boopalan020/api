@@ -10,7 +10,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 
-
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
@@ -73,9 +72,15 @@ export function Home (props) {
             <Typography variant="h6" className={classes.title}>
               TruckDesk
             </Typography>
-            <Link to='/login'>
-                <Button color="primary" className={classes.loginLinkcolor}>Login</Button>
-            </Link>
+            
+              <Link to='/login'>
+                <Button color="primary" className={classes.loginLinkcolor}>
+                {
+                  authenticated ?
+                  <>Logout</> :
+                  <>Login</>
+                }</Button>
+              </Link>
           </Toolbar>
         </AppBar>
       </div>

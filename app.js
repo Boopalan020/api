@@ -13,6 +13,7 @@ const Oauth = require('./routes/Oauth.login');
 const isAuths = require('./routes/isauths');
 const passportConfig = require('./config/passport.setup');
 const keys = require('./config/keys');
+const logout = require('./routes/logout');
 
 // Mongoose connection
 mongoose.connect(keys.mongodb.dbURI, {useNewUrlParser: true, useUnifiedTopology: true }, (err, result) => {
@@ -41,6 +42,7 @@ app.use(cookieSession({
 // SERVER app routes
 app.use('/auth', Oauth);
 app.use('/isauth', isAuths);
+app.use('/logout', logout);
 
 const port = process.env.port || 3001;
 

@@ -24,7 +24,7 @@ export function LoginComponent(props){
     return(
         <div>
             <div style={{marginBottom :'10px'}}>
-                <Home auth={true} />
+                <Home auth={false} />
             </div>
             
             <Container className="p-4"> 

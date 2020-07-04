@@ -1,5 +1,6 @@
 import React, { useState,  useEffect } from 'react'
 import axios from 'axios';
+import { Home } from '../HomeComponents/homeComponent';
 
 export function BoardComponent (props) {
     let [userIdentity, setuserIdentity] = useState({});
@@ -35,13 +36,20 @@ export function BoardComponent (props) {
 
     return (
         <div>
-            Dash Board <br></br>
-            { authenticated && "true"}
-            { !authenticated && "login again" }
-            { userIdentity.name } <br></br>
-            { userIdentity.GoogleID } <br></br>
-            { userIdentity.email } <br></br>
-            { userIdentity.ImageURL } <br></br>
+            { 
+                authenticated 
+                ? 
+                <Home auth={authenticated} />
+                :
+                <div>
+                    <Home auth={authenticated} />
+
+                    {/* Have to iclude the please logout component here */}
+                    <h1> Please Login Again </h1>
+
+
+                </div>
+            }
         </div>
     );
 }

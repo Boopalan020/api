@@ -11,7 +11,7 @@ function App(props){
             <Switch>
                 <Route exact path = '/' component= {() => <HomeComponent auth = {false}/>}></Route>
                 <Route exact path = '/login' component = { LoginComponent }></Route>
-                <Route exact path = '/profile' component= { BoardComponent }></Route>
+                <Route path = '/profile' component= { BoardComponent }></Route>
             </Switch>
         </Router>
     );
